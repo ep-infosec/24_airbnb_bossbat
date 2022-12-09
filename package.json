@@ -1,0 +1,49 @@
+{
+  "name": "bossbat",
+  "version": "1.2.0",
+  "description": "Stupid simple distributed job scheduling in node, backed by redis.",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "babel src --out-dir lib --copy-files",
+    "test": "npm run lint && npm run tests-only",
+    "lint": "eslint .",
+    "tests-only": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airbnb/bossbat.git"
+  },
+  "author": "Jordan Gensler <jordan.gensler@airbnb.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/airbnb/bossbat/issues"
+  },
+  "homepage": "https://github.com/airbnb/bossbat#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-jest": "^18.0.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-airbnb": "^2.1.1",
+    "coveralls": "^2.11.15",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "jest": "^18.0.0"
+  },
+  "dependencies": {
+    "cron-parser": "^2.3.0",
+    "ioredis": "^2.4.3",
+    "redlock": "^2.1.0",
+    "throwback": "^1.1.1",
+    "timestring": "^3.2.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "mocksPattern": "src/(?:[\\/]|^)__mocks__[\\/]",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/lib/"
+    ]
+  }
+}
